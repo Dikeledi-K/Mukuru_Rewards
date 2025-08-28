@@ -264,3 +264,18 @@ h2 {
   background: #e66a00;
   color: white;
 }
+
+#send-amount {
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #f05423;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  font-size: 16px;
+}
+
+#send-amount:focus {
+  outline: none;
+  border-color: #e66a00;
+}

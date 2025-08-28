@@ -97,10 +97,14 @@
         <h2>Calculate Your Points <i class="fas fa-rocket"></i></h2>
         <p>Enter the amount you want to send:</p>
         <input type="number" id="send-amount" placeholder="e.g., 100" />
-        <button onclick="calculatePoints()">Calculate Points</button>
+        <!-- <button onclick="calculatePoints()">Calculate Points</button> -->
+         <button id="calculate-btn">Calculate Points</button>
         <div id="points-earned"></div>
       </div>
     </div>
+
+    <!-- users to see the number they type in real-time (preview) -->
+    <div id="send-amount-preview" style="margin-top:10px; font-weight:bold;"></div>
 
     <!-- Tiers & Rewards Section -->
     <div class="section tiers-section">
