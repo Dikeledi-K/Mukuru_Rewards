@@ -1,52 +1,65 @@
-import os
-import sys
-
-# Add current folder to Python path (so 'api' can be found)
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-import django
 import json
+import os
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from api.models import User, Points, Balance, Reward
 
-# --- Set Django settings module ---
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "rewards_api.settings")
+# --- Function to load data from database file ---
+def load_database():
+    try:
+        database_path = os.path.join(os.path.dirname(__file__), 'database.json')
+        with open(database_path, 'r') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print("Warning: database.json not found, using empty data")
+        return {"users": [], "points": [], "balances": [], "rewards": []}
+    except json.JSONDecodeError:
+        print("Warning: database.json is corrupted, using empty data")
+        return {"users": [], "points": [], "balances": [], "rewards": []}
 
-# --- Setup Django ---
-django.setup()
-
-
-# --- Function to get all data ---
-def get_all_data():
-    return {
-        "users": list(User.objects.values()),
-        "points": list(Points.objects.values()),
-        "balances": list(Balance.objects.values()),
-        "rewards": list(Reward.objects.values())
-    }
-
-# --- HTTP request handler ---
+# --- HTTP Request Handler ---
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/api/all-data/":
-            try:
-                data = get_all_data()
-                self.send_response(200)
-                self.send_header("Content-type", "application/json")
-                self.end_headers()
-                self.wfile.write(json.dumps(data, indent=4).encode("utf-8"))
-            except Exception as e:
-                self.send_response(500)
-                self.end_headers()
-                self.wfile.write(f"Server Error: {e}".encode("utf-8"))
+            data = load_database()
+            self.send_response(200)
+            self.send_header("Content-type", "application/json")
+            self.send_header("Access-Control-Allow-Origin", "*")  # Enable CORS
+            self.end_headers()
+            self.wfile.write(json.dumps(data, indent=4).encode("utf-8"))
+        elif self.path == "/":
+            # Root endpoint with basic info
+            info = {
+                "message": "Mukuru Rewards API Server",
+                "endpoints": [
+                    "/api/all-data/ - Get all rewards data from database",
+                    "/ - This information"
+                ],
+                "database_file": "database.json"
+            }
+            self.send_response(200)
+            self.send_header("Content-type", "application/json")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps(info, indent=4).encode("utf-8"))
         else:
             self.send_response(404)
+            self.send_header("Content-type", "application/json")
+            self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
-            self.wfile.write(b"Not Found")
+            error = {"error": "Not Found", "path": self.path}
+            self.wfile.write(json.dumps(error, indent=4).encode("utf-8"))
 
 # --- Run the server ---
 if __name__ == "__main__":
-    port = 8001
-    print(f"Server started at http://127.0.0.1:{port}/api/all-data/")
+    port = 8000
+    print(f"Server started at http://127.0.0.1:{port}/")
+    print(f"API endpoint: http://127.0.0.1:{port}/api/all-data/")
+    print("Reading data from database.json file")
+    print("Press Ctrl+C to stop the server")
+    
     server = HTTPServer(("localhost", port), MyServer)
-    server.serve_forever()
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nShutting down server...")
+        server.server_close()
+        print("Server stopped.")
