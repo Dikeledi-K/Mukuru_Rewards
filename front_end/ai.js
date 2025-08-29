@@ -104,6 +104,98 @@ Provide unrelated information (sports, gossip, politics).
 Use financial jargon (e.g., “liquidity,” “asset allocation”).
 `;
 
+function addCustomStyles() {
+  const style = document.createElement("style");
+  style.textContent = `
+        .message {
+            padding: 12px 16px;
+            border-radius: 18px;
+            margin-bottom: 12px;
+            max-width: 80%;
+            word-wrap: break-word;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            line-height: 1.4;
+        }
+        
+        .user-message {
+            background-color: #f05423;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+            margin-left: 20%;
+        }
+        
+        .bot-message {
+            background-color: white;
+            color: #333;
+            border: 1px solid #e0e0e0;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            margin-right: 20%;
+        }
+        
+        .typing-message {
+            background-color: #f5f5f5;
+            color: #666;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            font-style: italic;
+            margin-right: 20%;
+        }
+        
+        .chat-messages {
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            gap: 8px;
+        }
+        
+        /* Add small triangle indicators for bubbles */
+        .user-message::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-left-color: #f05423;
+            border-right: 0;
+            border-bottom: 0;
+            margin-bottom: 8px;
+        }
+        
+        .bot-message::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-right-color: white;
+            border-left: 0;
+            border-bottom: 0;
+            margin-bottom: 8px;
+        }
+        
+        .typing-message::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-right-color: #f5f5f5;
+            border-left: 0;
+            border-bottom: 0;
+            margin-bottom: 8px;
+        }
+    `;
+  document.head.appendChild(style);
+}
 // ----- TOGGLE CHATBOX -----
 function toggleChatbox() {
   chatbox.classList.toggle("open");
@@ -128,7 +220,7 @@ async function chatWithMukuru() {
         context: chatbotContext,
         key: apiKey,
       },
-      timeout: 30000,
+      timeout: 20000,
     });
 
     if (response.data && response.data.answer) {
@@ -158,6 +250,7 @@ function addMessage(text, sender) {
 
 // ----- EVENT LISTENERS -----
 document.addEventListener("DOMContentLoaded", () => {
+  addCustomStyles();
   // Send message when button is clicked
   if (sendBtn) {
     sendBtn.addEventListener("click", chatWithMukuru);
