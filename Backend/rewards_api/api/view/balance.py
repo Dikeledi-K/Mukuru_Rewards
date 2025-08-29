@@ -1,18 +1,18 @@
-from django.urls import path
-from . import views
+from django.http import JsonResponse
+from api.models import User, Balance
 
-urlpatterns = [
-    # Points
-    path("points/<int:user_id>/", views.get_points),
-    path("points/<int:user_id>/add/<int:amount>/", views.add_points),
-    path("points/<int:user_id>/bonus/<int:bonus>/", views.add_bonus_points),
+def get_balance(request, user_id):
+    try:
+        balance = Balance.objects.get(user_id=user_id)
+        return JsonResponse({"balance": balance.amount})
+    except Balance.DoesNotExist:
+        return JsonResponse({"error": "Balance not found"}, status=404)
 
-    # Balance
-    path("balance/<int:user_id>/", views.get_balance),
-    path("balance/<int:user_id>/update/<int:amount>/", views.update_balance),
-
-    # Rewards
-    path("rewards/<int:user_id>/", views.get_rewards),
-    path("rewards/<int:user_id>/add/<str:description>/", views.add_reward),
-    path("rewards/redeem/<int:reward_id>/", views.redeem_reward),
-]
+def update_balance(request, user_id, amount):
+    try:
+        balance = Balance.objects.get(user_id=user_id)
+        balance.amount += amount
+        balance.save()
+        return JsonResponse({"balance": balance.amount})
+    except Balance.DoesNotExist:
+        return JsonResponse({"error": "Balance not found"}, status=404)
