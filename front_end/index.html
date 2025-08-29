@@ -14,7 +14,7 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="inspo.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <nav class="navbar navbar-inverse">
@@ -98,18 +98,22 @@
         <p>Enter the amount you want to send:</p>
         <input type="number" id="send-amount" placeholder="e.g., 100" />
         <!-- <button onclick="calculatePoints()">Calculate Points</button> -->
-         <button id="calculate-btn">Calculate Points</button>
+        <button id="calculate-btn">Calculate Points</button>
         <div id="points-earned"></div>
       </div>
     </div>
 
     <!-- users to see the number they type in real-time (preview) -->
-    <div id="send-amount-preview" style="margin-top:10px; font-weight:bold;"></div>
+    <div
+      id="send-amount-preview"
+      style="margin-top: 10px; font-weight: bold"
+    ></div>
 
     <!-- Tiers & Rewards Section -->
     <!-- <div class="section tiers-section">
       <h2>Our Tiered Rewards <i class="fas fa-layer-group"></i></h2> -->
-      <!-- --> <!-- <div class="tiers-table">
+    <!-- -->
+    <!-- <div class="tiers-table">
         <div class="tier bronze">
           <i class="fas fa-medal" style="color: #cd7f32"></i>
           <h3>Tier 1: Starter</h3>
@@ -140,30 +144,32 @@
             </li>
             <li><i class="fas fa-phone"></i>Reward to be updated</li>
             <li><i class="fas fa-gift"></i>Reward to be updated</li> -->
-          <!-- </ul> -->
+    <!-- </ul> -->
 
-          <!-- Progress Bar-->
-        <div class="section progress-section">
-          <h2>Your Journey to the Next Tier <i class="fas fa-gamepad"></i></h2>
-          
-          <div class="progress-container">
-            <div class="progress-labels">
-              <span>Starter</span>
-              <span>Saver</span>
-              <span>Achiever</span>
-              <span>Champion</span>
-            </div>
-            
-            <div class="progress-bar">
-              <div class="progress-fill" id="progress-fill"></div>
-            </div>
-            
-            <p id="progress-text">You need 200 more points to reach the next tier!</p>
-          </div>
+    <!-- Progress Bar-->
+    <div class="section progress-section">
+      <h2>Your Journey to the Next Tier <i class="fas fa-gamepad"></i></h2>
+
+      <div class="progress-container">
+        <div class="progress-labels">
+          <span>Starter</span>
+          <span>Saver</span>
+          <span>Achiever</span>
+          <span>Champion</span>
         </div>
-        <!-- </div> -->
 
-        <!-- <div class="tier gold">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+
+        <p id="progress-text">
+          You need 200 more points to reach the next tier!
+        </p>
+      </div>
+    </div>
+    <!-- </div> -->
+
+    <!-- <div class="tier gold">
           <i class="fas fa-medal" style="color: #ffd700"></i>
           <h3>Tier 3: Achiever</h3>
           <p>Send R60 00+</p>
@@ -177,7 +183,7 @@
             <li><i class="fas fa-phone"></i> Rewards to be updated</li>
 
             <li><i class="fas fa-trophy"></i> Rewards to be updated</li> -->
-          <!-- </ul>
+    <!-- </ul>
         </div>
 
         <div class="tier gold">
@@ -194,7 +200,7 @@
             <li><i class="fas fa-phone"></i> Rewards to be updated</li>
 
              <li><i class="fas fa-trophy"></i> Rewards to be updated</li> -->
-          <!-- </ul>
+    <!-- </ul>
         </div>
       </div> 
     </div>   -->
