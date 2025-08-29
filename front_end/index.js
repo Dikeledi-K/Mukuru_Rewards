@@ -2,7 +2,7 @@
 let user = {
   balance: 500,
   points: 250,
-  tier: "Bronze" // start with something valid
+  tier: "Bronze", // start with something valid
 };
 
 // ----- DOM ELEMENTS -----
@@ -103,4 +103,66 @@ document.addEventListener("DOMContentLoaded", () => {
   sendAmountInput.addEventListener("input", () => {
     sendAmountPreview.textContent = `You typed: ${sendAmountInput.value}`;
   });
+
+  $(window).scroll(function () {
+    $(".steps li, .tier").each(function () {
+      if ($(this).offset().top < $(window).scrollTop() + $(window).height()) {
+        $(this).addClass("fadeIn");
+      }
+    });
+  });
 });
+
+// // Chatbox functinality
+// document.getElementById("send-btn").addEventListener("click", async () => {
+//   const userInput = document.getElementById("user-input").value;
+//   if (!userInput) return;
+
+//   // Display user message
+//   const messagesDiv = document.getElementById("chat-messages");
+//   const userMessage = document.createElement("div");
+//   userMessage.textContent = `You: ${userInput}`;
+//   userMessage.style.marginBottom = "10px";
+//   messagesDiv.appendChild(userMessage);
+
+//   // Clear input field
+//   document.getElementById("user-input").value = "";
+
+//   // Call the backend API
+//   const apiKey = "03co48tb964db9ecd3c380caa4f2a9b6";
+//   const apiUrl = "https://api.shecodes.io/ai/v1/generate";
+//   const params = {
+//     prompt: userInput,
+//     context: chatbotContext,
+//     key: apiKey,
+//   };
+
+//   for (let attempt = 0; attempt < 3; attempt++) {
+//     try {
+//       const response = await fetch(
+//         `${apiUrl}?prompt=${encodeURIComponent(
+//           userInput
+//         )}&context=${encodeURIComponent(chatbotContext)}&key=${apiKey}`,
+//         {
+//           method: "GET",
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//           timeout: 30000, // 30s timeout
+//         }
+//       );
+
+//       const data = await response.json();
+//       const botMessage = document.createElement("div");
+//       botMessage.textContent = `Mukuru: ${data.response}`;
+//       botMessage.style.marginBottom = "10px";
+//       botMessage.style.color = "blue";
+//       messagesDiv.appendChild(botMessage);
+
+//       // Scroll to the bottom
+//       messagesDiv.scrollTop = messagesDiv.scrollHeight;
+//     } catch (error) {
+//       console.error("Error:", error);
+//     }
+//   }
+// });

@@ -15,6 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-inverse">
@@ -227,6 +228,33 @@
       </ul>
     </div>
 
+    <!-- The chatbot UI -->
+    <div>
+      <div class="chatbox">
+        <div class="chat-header">
+          <h4>Mukuru Assistant <i class="fas fa-robot"></i></h4>
+          <button id="close-chat" title="Close Chat">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+          <!-- Chat messages will appear here -->
+        </div>
+        <div class="chat-input">
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Type your message..."
+          />
+          <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+      <button id="open-chat" title="Chat with us">
+        <i class="fas fa-comments"></i>
+      </button>
+    </div>
+
     <script src="index.js"></script>
+    <script src="ai.js"></script>
   </body>
 </html>
