@@ -174,22 +174,71 @@ body {
     transform: translateY(-5px);
   }
 }
-/* .tiers-table {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.tier {
-  background: rgb(80, 82, 83);
-  padding: 50px;
-  border-radius: 50px;
+.marketplace-tile {
+  background: linear-gradient(135deg, #f05423, #ff9900);
+  color: white;
+  border-radius: 15px;
+  padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.3s;
-} */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.rewards-marketplace-section {
+  padding: 60px 20px;
+  background: #fff;
+  color: #333;
+  text-align: center;
+}
+
+.rewards-marketplace-section h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #f05423;
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.marketplace-tile {
+  background: linear-gradient(135deg, #f05423, #ff9900);
+  color: white;
+  border-radius: 15px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.marketplace-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.marketplace-tile .icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  animation: pulse 1.5s infinite;
+}
+
+.marketplace-tile h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.marketplace-tile p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 
 .tier h3 {
   margin-top: 10px;
@@ -199,28 +248,81 @@ body {
 .tier:hover {
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
-/* .tier.bronze {
-  border: 2px solid #cd7f32;
-} */
-/* .tier.silver {
-  border: 2px solid #c0c0c0;
+.transaction-history-section {
+  padding: 60px 20px;
+  background: #fff;
+  color: #333;
+  text-align: center;
 }
-.tier.gold {
-  border: 2px solid #ffd700;
+
+.transaction-history-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #f05423;
 }
-.tier i {
-  font-size: 20px;
-  margin-bottom: 10px;
-} */
-/* .tier ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
+
+.transaction-table-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow-x: auto;
 }
-.tier ul li {
-  margin: 10px 0;
-  font-size: 14px;
-} */
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.transaction-table th {
+  background-color: #f05423;
+  color: white;
+}
+
+.transaction-table tr:hover {
+  background-color: #f9f9f9;
+}.rewards-marketplace-section {
+  background: #fff;
+}
+
+.transaction-history-section {
+  background: #f9f9f9;
+}
+
+.how-it-works-section {
+  background: #fff;
+}
+
+.section {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+
+
+.status {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.status.success {
+  background-color: #28a745;
+  color: white;
+}
+
+.status.pending {
+  background-color: #ffc107;
+  color: #333;
+}
+
 
 
 .progress-section {
@@ -323,3 +425,4 @@ h2 {
   outline: none;
   border-color: #e66a00;
 }
+
