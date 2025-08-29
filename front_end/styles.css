@@ -174,7 +174,7 @@ body {
     transform: translateY(-5px);
   }
 }
-.tiers-table {
+/* .tiers-table {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
@@ -189,7 +189,7 @@ body {
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s;
-}
+} */
 
 .tier h3 {
   margin-top: 10px;
@@ -199,10 +199,10 @@ body {
 .tier:hover {
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
-.tier.bronze {
+/* .tier.bronze {
   border: 2px solid #cd7f32;
-}
-.tier.silver {
+} */
+/* .tier.silver {
   border: 2px solid #c0c0c0;
 }
 .tier.gold {
@@ -211,8 +211,8 @@ body {
 .tier i {
   font-size: 20px;
   margin-bottom: 10px;
-}
-.tier ul {
+} */
+/* .tier ul {
   list-style: none;
   padding: 0;
   margin-top: 10px;
@@ -220,7 +220,51 @@ body {
 .tier ul li {
   margin: 10px 0;
   font-size: 14px;
+} */
+
+
+.progress-section {
+  background: rgb(37, 40, 42);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
 }
+
+.progress-container {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 25px;
+  background: #555;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #f05423, #ff9900);
+  transition: width 0.5s ease-in-out;
+  border-radius: 15px 0 0 15px;
+}
+
+#progress-text {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
 .steps {
   list-style: none;
   padding: 0;
