@@ -1,0 +1,281 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+.navbar {
+  min-height: 80px;
+  width: 100%;
+  margin: 0;
+  background: #333;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.container-fluid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+.navbar-brand {
+  padding: 10px 0;
+  margin-left: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.navbar-brand img {
+  height: 50px;
+}
+.navbar-nav {
+  margin: 0;
+}
+.navbar-nav li a {
+  line-height: 80px;
+  padding: 0 20px;
+  font-size: 18px;
+  color: white !important;
+  transition: background 0.3s;
+}
+.navbar-nav li a:hover {
+  /* background: #f05423; */
+  color: white !important;
+}
+.navbar-nav.navbar-right li a {
+  font-size: 16px;
+}
+.dropdown-menu {
+  background: #333;
+  border: none;
+}
+.dropdown-menu li a {
+  line-height: 40px;
+  color: white !important;
+}
+.dropdown-menu li a:hover {
+  color: #f05423;
+}
+.section {
+  padding: 50px 20px;
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+  border-radius: 0;
+  box-shadow: none;
+}
+.welcome-section {
+  background: #f05423;
+  color: white;
+  text-align: center;
+}
+.tiers-section {
+  background: rgb(37, 40, 42);
+  color: white;
+}
+
+.tiers-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.how-it-works-section {
+  background: white;
+  color: #333;
+}
+.dashboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card {
+  background: white;
+  color: #f05423;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.tier-icon {
+  animation: spin 2s infinite linear;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.calculator {
+  margin: 40px 0;
+  text-align: center;
+}
+.calculator input {
+  padding: 10px;
+  width: 200px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+.calculator button {
+  background: #fff;
+  color: #f05423;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.calculator button:hover {
+  background: #e66a00;
+  color: white;
+}
+#points-earned {
+  font-size: 24px;
+  margin-top: 20px;
+  animation: bounce 0.5s;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+.tiers-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tier {
+  background: rgb(80, 82, 83);
+  padding: 50px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s;
+}
+
+.tier h3 {
+  margin-top: 10px;
+  color: #f05423;
+}
+
+.tier:hover {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+.tier.bronze {
+  border: 2px solid #cd7f32;
+}
+.tier.silver {
+  border: 2px solid #c0c0c0;
+}
+.tier.gold {
+  border: 2px solid #ffd700;
+}
+.tier i {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.tier ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+.tier ul li {
+  margin: 10px 0;
+  font-size: 14px;
+}
+.steps {
+  list-style: none;
+  padding: 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.steps li {
+  margin: 20px 0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+.steps li i {
+  margin-right: 10px;
+  color: #f05423;
+  font-size: 24px;
+  animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+h1,
+h2 {
+  color: inherit;
+}
+.signUp-btn {
+  background: #fff;
+  color: #f05423;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.signUp-btn:hover {
+  background: #e66a00;
+  color: white;
+}
+
+#send-amount {
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #f05423;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  font-size: 16px;
+}
+
+#send-amount:focus {
+  outline: none;
+  border-color: #e66a00;
+}
