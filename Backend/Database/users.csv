@@ -1,0 +1,11 @@
+user_id,name,surname,id_number,phone_number,email,transaction_id,transaction_type,date,amount,currency,status,location,beneficiary_name,beneficiary_bank,beneficiary_acc_number,merchant_name,merchant_category
+MKU1001,Thabo,Mokoena,8501015050087,+27731234567,thabo.m@email.co.za,TXN20001,Send Money,2024-01-15,500.00,ZAR,Completed,Johannesburg CBD,Sarah Van Wyk,Standard Bank,1002003050,,
+MKU1002,Lerato,Ndlovu,9002184065089,+27831239876,lerato.n@mail.com,TXN20002,Buy Groceries,2024-01-15,327.85,ZAR,Completed,Checkers Sandton,,,,Checkers,Supermarket
+MKU1001,Thabo,Mokoena,8501015050087,+27731234567,thabo.m@email.co.za,TXN20003,Buy Groceries,2024-01-16,145.50,ZAR,Completed,Pick n Pay Randburg,,,,Pick n Pay,Supermarket
+MKU1003,James,Smith,8806305071084,+27761234567,james.s@globalmail.com,TXN20004,Send Money,2024-01-17,1000.00,ZAR,Completed,Cape Town,David Johnson,Capitec,2004006000,,
+MKU1002,Lerato,Ndlovu,9002184065089,+27831239876,lerato.n@mail.com,TXN20005,Send Money,2024-01-18,250.00,ZAR,Completed,Online,Tommy Ndlovu,FNB,1234567891,,
+MKU1004,Sarah,Van Wyk,9207154062081,+27821237788,sarah.vw@mymail.co.za,TXN20006,Buy Groceries,2024-01-18,89.99,ZAR,Completed,Spar Pretoria,,,,Spar,Supermarket
+MKU1003,James,Smith,8806305071084,+27761234567,james.s@globalmail.com,TXN20007,Buy Groceries,2024-01-19,210.75,ZAR,Completed,Woolworths Food V&A,,,,Woolworths,Supermarket
+MKU1004,Sarah,Van Wyk,9207154062081,+27821237788,sarah.vw@mymail.co.za,TXN20008,Send Money,2024-01-20,750.00,ZAR,Completed,Pretoria,Thabo Mokoena,Nedbank,5006007000,,
+MKU1001,Thabo,Mokoena,8501015050087,+27731234567,thabo.m@email.co.za,TXN20009,Send Money,2024-01-21,300.00,ZAR,Failed,Online,Lerato Ndlovu,ABSA,9008007000,,
+MKU1002,Lerato,Ndlovu,9002184065089,+27831239876,lerato.n@mail.com,TXN20010,Buy Groceries,2024-01-22,430.20,ZAR,Completed,Boxer Superstore Durban,,,,Boxer,Supermarket
