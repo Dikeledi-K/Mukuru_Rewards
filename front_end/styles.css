@@ -180,7 +180,7 @@ body {
   border-radius: 15px;
   padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   position: relative;
@@ -213,14 +213,14 @@ body {
   border-radius: 15px;
   padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .marketplace-tile:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .marketplace-tile .icon {
@@ -238,7 +238,6 @@ body {
   font-size: 14px;
   line-height: 1.5;
 }
-
 
 .tier h3 {
   margin-top: 10px;
@@ -271,7 +270,7 @@ body {
   width: 100%;
   border-collapse: collapse;
   font-size: 16px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .transaction-table th,
@@ -288,7 +287,8 @@ body {
 
 .transaction-table tr:hover {
   background-color: #f9f9f9;
-}.rewards-marketplace-section {
+}
+.rewards-marketplace-section {
   background: #fff;
 }
 
@@ -301,10 +301,8 @@ body {
 }
 
 .section {
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
-
-
 
 .status {
   font-weight: bold;
@@ -322,8 +320,6 @@ body {
   background-color: #ffc107;
   color: #333;
 }
-
-
 
 .progress-section {
   background: rgb(37, 40, 42);
@@ -370,7 +366,7 @@ body {
 .steps {
   list-style: none;
   padding: 0;
-  max-width: 900px;
+  max-width: 901px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -425,4 +421,3 @@ h2 {
   outline: none;
   border-color: #e66a00;
 }
-
