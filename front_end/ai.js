@@ -199,6 +199,9 @@ function addCustomStyles() {
 // ----- TOGGLE CHATBOX -----
 function toggleChatbox() {
   chatbox.classList.toggle("open");
+  if (chatbox.classList.contains("open")) {
+    userInputEl.focus();
+  }
 }
 
 // ----- CHAT WITH MUKURU USING SHE CODES API -----
